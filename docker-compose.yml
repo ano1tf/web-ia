@@ -1,0 +1,17 @@
+services:
+  web-ia:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      # ⚠️ Changez ce jeton : il protège l'API, le viewer et le pont MCP.
+      WEBIA_TOKEN: ${WEBIA_TOKEN:-change-me-please}
+      WEBIA_HEADLESS: "1"
+    volumes:
+      # Les profils de session (cookies) survivent aux redémarrages.
+      - webia-data:/data
+    restart: unless-stopped
+    shm_size: "1gb"
+
+volumes:
+  webia-data:

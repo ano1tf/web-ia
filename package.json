@@ -1,0 +1,30 @@
+{
+  "name": "webla-ai-browser",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Navigateur pour IA : un navigateur web o\u00f9 l'humain se connecte et o\u00f9 l'agent IA agit sur les m\u00eames sessions.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node server/dev.js",
+    "build": "vite build",
+    "start": "node server/cli.js",
+    "mcp": "node bin/webia-mcp.mjs",
+    "demo": "node scripts/demo-flow.mjs"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^153.0.0",
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2",
+    "playwright-core": "^1.65.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.11"
+  }
+}

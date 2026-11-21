@@ -1,0 +1,15 @@
+{
+  "name": "web-ia",
+  "build": { "dockerfile": "Dockerfile", "context": "." },
+  "containerEnv": {
+    "WEBIA_TOKEN": "dev-token",
+    "WEBIA_ENGINE": "chromium",
+    "WEBIA_DATA_DIR": "/tmp/webia-data"
+  },
+  "forwardPorts": [8787],
+  "portsAttributes": {
+    "8787": { "label": "web-ia console", "onAutoForward": "openPreview" }
+  },
+  "postCreateCommand": "npm ci --no-audit --no-fund && npx vite build",
+  "remoteUser": "pwuser"
+}
